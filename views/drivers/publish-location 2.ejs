@@ -11,16 +11,17 @@
 </head>
 <body>
   <div>
-    <h1>Driver you are in ch1</h1>
+    <h1>Driver you are in</h1>
+    <h1 id="driverName"><%= driverName %></h1>
   </div>
   <a href="/logout">Logout</a>
     <script id="name">
 
-// var a = document.getElementById("driverName");
-//     var b = a.innerText;
-//     console.log(b);
+var a = document.getElementById("driverName");
+    var b = a.innerText;
+    console.log(b);
 
-    var pnChannel = 'ch1';
+    var pnChannel = b;
 
         function getLocation() {
             if (navigator.geolocation) {
@@ -37,7 +38,7 @@
       }
     }
     
-    setInterval(function(){updatePosition(getLocation());}, 10000);
+    setInterval(function(){updatePosition(getLocation());}, 3000);
 
     function currentLocation() {
       return {lat:window.lat, lng:window.lng};
@@ -55,7 +56,7 @@
           channel: pnChannel, 
           message:currentLocation()
         });
-    }, 5000);
+    }, 1000);
     
     </script>
 </body>
